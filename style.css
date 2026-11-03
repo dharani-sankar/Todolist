@@ -1,0 +1,83 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #e8eef3;
+  color: #1f2d3a;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.app {
+  width: 100%;
+  max-width: 560px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+  align-self: flex-start;
+}
+
+h1 { font-size: 1.8rem; }
+.counter { color: #6b7c8a; margin: 4px 0 18px; font-size: .9rem; }
+
+.todo-form { display: flex; gap: 8px; flex-wrap: wrap; }
+.todo-form input[type="text"] { flex: 1 1 180px; }
+
+input, button { font: inherit; }
+input {
+  padding: 10px 12px;
+  border: 1px solid #c5d0d9;
+  border-radius: 8px;
+}
+input:focus-visible, button:focus-visible {
+  outline: 2px solid #1d6fa5;
+  outline-offset: 2px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  background: #1d6fa5;
+  color: #fff;
+}
+button:hover { background: #165a87; }
+
+.toolbar { margin-top: 18px; display: flex; flex-direction: column; gap: 10px; }
+.filters { display: flex; gap: 6px; }
+.filter { background: #eef2f5; color: #1f2d3a; flex: 1; }
+.filter:hover { background: #dde5ec; }
+.filter.active { background: #1d6fa5; color: #fff; }
+
+.todo-list { list-style: none; margin-top: 16px; }
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 8px;
+  border-bottom: 1px solid #e3e9ee;
+}
+.todo-item .text { flex: 1; word-break: break-word; }
+.todo-item .due { display: block; font-size: .78rem; color: #6b7c8a; }
+.todo-item .due.overdue { color: #c0392b; font-weight: 600; }
+.todo-item.completed .title { text-decoration: line-through; color: #94a3b0; }
+
+.todo-item .edit-input { flex: 1; }
+.icon-btn { padding: 6px 10px; font-size: .85rem; }
+.icon-btn.edit { background: #e0a21a; }
+.icon-btn.edit:hover { background: #c58d12; }
+.icon-btn.delete { background: #c0392b; }
+.icon-btn.delete:hover { background: #a02f23; }
+
+.empty { text-align: center; color: #6b7c8a; padding: 24px 0; }
+.clear { margin-top: 16px; background: #6b7c8a; width: 100%; }
+.clear:hover { background: #55656f; }
+
+@media (max-width: 480px) {
+  .app { padding: 18px; }
+}
